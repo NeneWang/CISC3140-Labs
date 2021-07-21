@@ -1,9 +1,24 @@
 
 # SVN Repository Instructions
 
+## Reference Sheet
+|  | Git  | Subversion|
+|--|--|-- |
+| Documentation | https://git-scm.com/docs | https://svnbook.red-bean.com/ |
+| Quickistart | https://www.linuxjournal.com/content/git-quick-start-guide | https://subversion.apache.org/quick-start |
+| Creating New Repository | git init | svnadmin create \<repo name> |
+| Adding Files | git add \<filename.extension> | svn add \<filename.extension> |
+| Commiting Files | git commit -m "\<commit message>"  | svn commit -m "\<commit message>"|
+| Pushing Files | git push \<remote> \<branch> | - |
+| Pulling Files | git pull \<options> \<repository>  | svn update |
+| Cloning Repository | git clone | svn checkout URL[@REV]... [PATH]  e.g `svn checkout file:///var/svn/repos/test_mine` |
+| Review Changes | git status |svn diff  |
+
+
+
 ## Steps
 ### Create Repository
-    enter svnadmin create Lab2.1
+    svnadmin create Lab2.1
     ls -l Lab2.1/
 > nwang cis 4096 Jul 21 11:38 conf
 >nwang cis 4096 Jul 21 11:38 db
@@ -13,7 +28,7 @@ nwang cis 4096 Jul 21 11:38 locks
 nwang cis  229 Jul 21 11:38 README.txt
 
     cd Lab2.1/
-    pwdcode here
+    pwd
 >/users1/st/nwang/Lab2.1
 
     mkdir working_folders
@@ -35,14 +50,15 @@ nano hello_world.py
 
 ### Making Modifications
 
-nano hello_world.py
-Make Changtes
+    nano hello_world.py
+
 >Python:
 >>print("Hello World")
 >>print(" I made some modifications")
 
- svn commit -m "hello world | Modifications"
-
+     svn diff
+     svn commit -m "hello world | Modifications"
+    
 >Sending        hello_world.py
 >Transmitting file data .
 >Committed revision 2.
