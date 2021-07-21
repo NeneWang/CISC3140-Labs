@@ -1,0 +1,55 @@
+svnadmin create Lab2.1
+ls -l Lab2.1/
+
+
+drwxr-xr-x. 2 nwang cis 4096 Jul 21 11:38 conf
+drwxr-sr-x. 6 nwang cis 4096 Jul 21 11:38 db
+-r--r--r--. 1 nwang cis    2 Jul 21 11:38 format
+drwxr-xr-x. 2 nwang cis 4096 Jul 21 11:38 hooks
+drwxr-xr-x. 2 nwang cis 4096 Jul 21 11:38 locks
+-rw-r--r--. 1 nwang cis  229 Jul 21 11:38 README.txt
+
+
+cd Lab2.1/
+pwd
+>>/users1/st/nwang/Lab2.1
+
+mkdir working_folders
+svn checkout file:///users1/st/nwang/Lab2.1
+ls
+>>Lab2.1
+cd Lab2.1
+touch hello_world.py
+nano hello_world.py
+>>(Python) print("Hello World")
+
+svn add hello_world.py
+>>A         hello_world.py
+
+svn commit -m "hello world | added"
+
+### Making Modifications
+
+nano hello_world.py
+
+>>>print("Hello World")
+>>>print(" I made some modifications")
+
+ svn commit -m "hello world | Modifications"
+
+>>Sending        hello_world.py
+>>Transmitting file data .
+>>Committed revision 2.
+
+
+
+
+
+
+
+
+
+
+
+
+
