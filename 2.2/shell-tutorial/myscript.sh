@@ -23,12 +23,14 @@
 #   [[ "$name" != "Name" ]] && echo "$name"
 # done < countries.csv
 
+wget https://wngnelson.com/api/countries.csv
+
 count=0
 while IFS=, read -r name code; do
   # do something...
   [[ "$name" != "Name" ]] && echo "$name"
   [[ "$code" != "Code" ]] && echo "$code"
-  echo "$name,  $code" >> log.csv
+  echo "output name: $name,  $code" >> log.csv
 done < countries.csv; \
 echo ">> we found ${count} bad entries"
 
