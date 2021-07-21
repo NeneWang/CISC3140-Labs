@@ -1,7 +1,5 @@
 #! /bin/bash
 
-# ECHO COMMAND
-echo hello World!
 
 # VARIABLES
 # Uppercase by convention
@@ -10,11 +8,17 @@ echo hello World!
 # NAME = "Brad"
 # echo "My name is $NAME"
 
-read -p "Enter your name: " NAME
-echo "My name is ${NAME}"
+# read -p "Enter your name: " NAME
+# echo "My name is ${NAME}"
+#
+# if ["$NAME" ==  "YES"]
+# then
+#   echo "Your name is YES"
+# else
+#   echo "Your name is Not YES"
+# fi
 
-if ["$NAME" ==  "YES"]
-then
-    echo "Your name is YES"
-else
-  echo "Your name is Not YES"
+while IFS=, read -r name code; do
+  # do something... Don't forget to skip the header line!
+  [[ "$name" != "Name" ]] && echo "$name"
+done < countries.csv
