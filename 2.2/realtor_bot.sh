@@ -19,23 +19,32 @@ fi
 
 # deleteIfExists $FILE_IN
 deleteIfExists $FILE_OUT
-TARGET_BORO=3
+TARGET_BORO='"3"'
 
 # wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O $FILE_IN
 
-count=0
+summation_fullval=0
 while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	ltdepth	ext	stories	fullval	avland	avtot	exland	extot	excd1	staddr	zip	exmptcl	bldfront	blddepth	avland2	avtot2	exland2	extot2	excd2	period	year	valtype	borough	latitude	longitude	community_board	council_district	census_tract	bin	nta	geocoded_column; do
   # do something...
   # if ["$NAME" ==  "YES"]
   # then
   # echo $bble
-
-  if [ $BORO != "3" ];  then
-    echo "The output should be '$TARGET_BORO'"
-    echo $BORO
+  # [[ "$BORO" != "boro" ]] && echo "$BORO"
+  # [[ "$BORO" != '"boro"' ]] && echo "$BORO"
+  # [[ "$fullval" != '"0"' ]] && echo "$fullval"
+  # fullval = ${fullval::-1}
+  # fullval = ${fullval::-1}
+  fullval=${fullval%?}
+  fullval=${fullval:1}
+  # echo $fullval
+  if [ $BORO == $TARGET_BORO ];  then
+    # echo "The output should be '$TARGET_BORO'"
+    # summation_fullval=$(($summation_fullval+$fullval))
+    let "summation_fullval+=fullval"
+    # echo $BORO
   fi
   # [[ "$name" != "Name" ]] && echo "$name"
   # [[ "$code" != "Code" ]] && echo "$code"
   # echo "output name: $name,  $code" >> $FILE_OUT
 done < $FILE_IN; \
-echo ">> we found ${count} bad entries"
+echo ">> max full val $summation_fullval"
