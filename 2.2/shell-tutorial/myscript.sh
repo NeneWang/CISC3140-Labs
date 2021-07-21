@@ -12,3 +12,9 @@ echo hello World!
 
 read -p "Enter your name: " NAME
 echo "My name is ${NAME}"
+
+if ["$NAME" ==  "YES"]
+then
+    echo "Your name is YES"
+else
+  echo "Your name is Not YES"
