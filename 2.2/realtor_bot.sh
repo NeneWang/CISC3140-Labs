@@ -15,6 +15,8 @@ if test "$1"; then
 fi
 }
 
+
+
 # deleteIfExists $FILE_IN
 deleteIfExists $FILE_OUT
 
@@ -25,7 +27,7 @@ while IFS=, read -r bble	boro	block	lot	easement	owner	bldgcl	taxclass	ltfront	l
   # do something...
 
   echo $bble
-  if $boro == "3"; then
+  if ["3" == "3"]; then
     echo $boro
   fi
   # [[ "$name" != "Name" ]] && echo "$name"
