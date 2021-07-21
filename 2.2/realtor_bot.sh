@@ -49,4 +49,4 @@ while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	l
   # [[ "$code" != "Code" ]] && echo "$code"
   # echo "output name: $name,  $code" >> $FILE_OUT
 done < $FILE_IN; \
-echo ">> max full val $summation_fullval"
+echo ">> max full val $summation_fullval with a count of $count_target"
