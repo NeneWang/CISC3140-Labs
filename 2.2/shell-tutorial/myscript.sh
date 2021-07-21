@@ -18,7 +18,15 @@
 #   echo "Your name is Not YES"
 # fi
 
+# while IFS=, read -r name code; do
+#   # do something... Don't forget to skip the header line!
+#   [[ "$name" != "Name" ]] && echo "$name"
+# done < countries.csv
+
+count=0
 while IFS=, read -r name code; do
-  # do something... Don't forget to skip the header line!
+  # do something...
   [[ "$name" != "Name" ]] && echo "$name"
-done < countries.csv
+  [[ "$code" == *","* ]] && echo "$name $code" && ((++count))
+done < countries.csv; \
+echo ">> we found ${count} bad entries"
