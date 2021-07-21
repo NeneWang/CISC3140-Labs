@@ -27,6 +27,17 @@ count=0
 while IFS=, read -r name code; do
   # do something...
   [[ "$name" != "Name" ]] && echo "$name"
-  [[ "$code" == *","* ]] && echo "$name $code" && ((++count))
+  [[ "$code" != "Code" ]] && echo "$code"
 done < countries.csv; \
 echo ">> we found ${count} bad entries"
+
+# INPUT=countries.csv
+# OLDIFS=$IFS
+# IFS=','
+# [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
+# while read country, code
+# do
+# 	echo "Name : $country"
+# 	echo "DOB : $code"
+# done < $INPUT
+# IFS=$OLDIFS
