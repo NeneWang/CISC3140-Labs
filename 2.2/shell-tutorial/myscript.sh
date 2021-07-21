@@ -34,7 +34,6 @@ if test "$1"; then
 fi
 }
 
-
 deleteIfExists $FILE_IN
 deleteIfExists $FILE_OUT
 
