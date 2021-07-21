@@ -23,15 +23,30 @@
 #   [[ "$name" != "Name" ]] && echo "$name"
 # done < countries.csv
 
-wget https://wngnelson.com/api/countries.csv
+FILE_IN=countries_data.csv
+FILE_OUT=report.csv
+
+
+deleteIfExists(){
+if test "$1"; then
+  echo "Cleaning $1"
+  rm $1
+fi
+}
+
+
+deleteIfExists $FILE_IN
+deleteIfExists $FILE_OUT
+
+wget https://wngnelson.com/api/countries.csv -O $FILE_IN
 
 count=0
 while IFS=, read -r name code; do
   # do something...
   [[ "$name" != "Name" ]] && echo "$name"
   [[ "$code" != "Code" ]] && echo "$code"
-  echo "output name: $name,  $code" >> log.csv
-done < countries.csv; \
+  echo "output name: $name,  $code" >> $FILE_OUT
+done < $FILE_IN; \
 echo ">> we found ${count} bad entries"
 
 # INPUT=countries.csv
