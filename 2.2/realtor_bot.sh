@@ -24,6 +24,7 @@ TARGET_BORO='"3"'
 # wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O $FILE_IN
 
 summation_fullval=0
+count_target=0
 while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	ltdepth	ext	stories	fullval	avland	avtot	exland	extot	excd1	staddr	zip	exmptcl	bldfront	blddepth	avland2	avtot2	exland2	extot2	excd2	period	year	valtype	borough	latitude	longitude	community_board	council_district	census_tract	bin	nta	geocoded_column; do
   # do something...
   # if ["$NAME" ==  "YES"]
@@ -41,6 +42,7 @@ while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	l
     # echo "The output should be '$TARGET_BORO'"
     # summation_fullval=$(($summation_fullval+$fullval))
     let "summation_fullval+=fullval"
+    let "count_target+=1"
     # echo $BORO
   fi
   # [[ "$name" != "Name" ]] && echo "$name"
