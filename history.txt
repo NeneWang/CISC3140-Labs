@@ -24,5 +24,4 @@
   668  svn add hello_world.py 
   669  svn commit -m "hello world | added"
   670  nano hello_world.py 
-  671  svn commit "hello world | Modifications"
   672  svn commit -m "hello world | Modifications"
