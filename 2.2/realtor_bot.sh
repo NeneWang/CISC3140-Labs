@@ -19,16 +19,20 @@ fi
 
 # deleteIfExists $FILE_IN
 deleteIfExists $FILE_OUT
+TARGET_BORO=3
 
 # wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O $FILE_IN
 
 count=0
-while IFS=, read -r bble	boro	block	lot	easement	owner	bldgcl	taxclass	ltfront	ltdepth	ext	stories	fullval	avland	avtot	exland	extot	excd1	staddr	zip	exmptcl	bldfront	blddepth	avland2	avtot2	exland2	extot2	excd2	period	year	valtype	borough	latitude	longitude	community_board	council_district	census_tract	bin	nta	geocoded_column; do
+while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	ltdepth	ext	stories	fullval	avland	avtot	exland	extot	excd1	staddr	zip	exmptcl	bldfront	blddepth	avland2	avtot2	exland2	extot2	excd2	period	year	valtype	borough	latitude	longitude	community_board	council_district	census_tract	bin	nta	geocoded_column; do
   # do something...
+  # if ["$NAME" ==  "YES"]
+  # then
+  # echo $bble
 
-  echo $bble
-  if ["3" == "3"]; then
-    echo $boro
+  if [ $BORO != "3" ];  then
+    echo "The output should be '$TARGET_BORO'"
+    echo $BORO
   fi
   # [[ "$name" != "Name" ]] && echo "$name"
   # [[ "$code" != "Code" ]] && echo "$code"
