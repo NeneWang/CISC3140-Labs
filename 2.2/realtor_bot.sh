@@ -25,6 +25,7 @@ TARGET_BORO='"3"'
 
 summation_fullval=0
 count_target=0
+average_target=0
 while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	ltdepth	ext	stories	fullval	avland	avtot	exland	extot	excd1	staddr	zip	exmptcl	bldfront	blddepth	avland2	avtot2	exland2	extot2	excd2	period	year	valtype	borough	latitude	longitude	community_board	council_district	census_tract	bin	nta	geocoded_column; do
   # do something...
   # if ["$NAME" ==  "YES"]
@@ -43,10 +44,11 @@ while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	l
     # summation_fullval=$(($summation_fullval+$fullval))
     let "summation_fullval+=fullval"
     let "count_target+=1"
+    average_target=$(($summation_fullval/$count_target))
     # echo $BORO
   fi
   # [[ "$name" != "Name" ]] && echo "$name"
   # [[ "$code" != "Code" ]] && echo "$code"
   # echo "output name: $name,  $code" >> $FILE_OUT
 done < $FILE_IN; \
-echo ">> max full val $summation_fullval with a count of $count_target"
+echo ">> max full val $summation_fullval with a count of $count_target with average market value of $average_target"
