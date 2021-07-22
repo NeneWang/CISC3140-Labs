@@ -8,7 +8,7 @@ Instructions for macOS
  2. Install wget.
  3. Go to the file where realtor_bot.sh is ubicated.
  4. Run:
- ` chmod +x realtor_bot.sh `<br>
+<br> ` chmod +x realtor_bot.sh `<br>
  `./realtor_bot.sh`
 
 ## What the program does?
