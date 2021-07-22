@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-echo "This is the Realtor Bot"
+echo "Realtor Bot Initiated!"
 
 
 FILE_IN=realestate.csv
