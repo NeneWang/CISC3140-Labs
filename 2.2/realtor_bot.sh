@@ -67,8 +67,8 @@ while IFS=, read -r bble	BORO	block	lot	easement	owner	bldgcl	taxclass	ltfront	l
 
 done < $FILE_IN; \
 
-echo ">> max full val $summation_fullval_brooklyn with a count of $count_target_brooklyn with average market value of $average_target_brooklyn"
-echo "Borough, Total Market Value, Average Propertie Value" >> $FILE_OUT
+# echo ">> max full val $summation_fullval_brooklyn with a count of $count_target_brooklyn with average market value of $average_target_brooklyn"
+echo "Borough, Total Market Value, Average Property Value" >> $FILE_OUT
 echo "Brooklyn, $summation_fullval_brooklyn,  $average_target_brooklyn" >> $FILE_OUT
 echo "Manhattan, $summation_fullval_manhattan,  $average_target_manhattan" >> $FILE_OUT
 echo "Bronx, $summation_fullval_bronx,  $average_target_bronx" >> $FILE_OUT
