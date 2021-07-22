@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-echo "Hello world!"
+echo "This is the Realtor Bot"
 
 
 FILE_IN=realestate.csv
