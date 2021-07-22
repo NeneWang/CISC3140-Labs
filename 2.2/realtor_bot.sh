@@ -14,7 +14,7 @@ if test "$1"; then
 fi
 }
 
-# deleteIfExists $FILE_IN
+deleteIfExists $FILE_IN
 deleteIfExists $FILE_OUT
 
 wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O $FILE_IN
