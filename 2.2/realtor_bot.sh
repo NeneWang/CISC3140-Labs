@@ -56,3 +56,5 @@ echo ">> max full val $summation_fullval with a count of $count_target with aver
 echo "Brooklyn Real Estate: " >> $FILE_OUT
 echo "Total Market Value, Average Propertie Value" >> $FILE_OUT
 echo "$summation_fullval,  $average_target" >> $FILE_OUT
+
+echo "Job finished! Report available at $FILE_OUT"
