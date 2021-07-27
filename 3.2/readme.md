@@ -1,3 +1,6 @@
+### Live Demo
+https://wngnelson.com/essay/
+
 ### Credits, Sources and Dependencies
 Bootstrap 4.3 https://getbootstrap.com
 Bootstrap Toggle: https://gitbrent.github.io/bootstrap4-toggle/
