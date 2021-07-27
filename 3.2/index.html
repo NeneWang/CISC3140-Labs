@@ -20,8 +20,7 @@
         <h1>Essay Assistant 📝</h1>
         <div class="form-group pt-2">
             <label for="txt-essay-area">Enter your essay here | Word count: <span id="sp-word-count">00</span></label>
-            <textarea onchange="onTxtEssayChange()" class="form-control" id="txt-essay-area"
-                rows="20"></textarea>
+            <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
         </div>
 
     </div>
@@ -34,10 +33,28 @@
     //     console.log("Text area focused")
     // );
 
-    function onTxtEssayChange() {
-        console.log(txtEssayArea.value)
-        console.log("Sds");
-    }
+    txtEssayArea.addEventListener('input', () => {
+        var textLn = (txtEssayArea.value).split(" ").length;
+        console.log(textLn);
+        console.log("edited")
+    })
+
+    // txtEssayArea.addEventListener("oninput", onTxtEssayChange)
+    // if (txtEssayArea.addEventListener) {
+    //     txtEssayArea.addEventListener('input', function () {
+    //         // event handling code for sane browsers
+    //     }, false);
+    // } else if (txtEssayArea.attachEvent) {
+    //     txtEssayArea.attachEvent('onpropertychange', function () {
+    //         // IE-specific event handling code
+    //     });
+    // }
+
+
+    // function onTxtEssayChange(event) {
+    //     console.log(txtEssayArea.value)
+    //     console.log("Sds");
+    // }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
