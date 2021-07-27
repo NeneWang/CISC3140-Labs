@@ -10,3 +10,4 @@ https://gitbrent.github.io/bootstrap4-toggle/
 
 Timing:
 https://www.w3schools.com/js/js_timing.asp
+

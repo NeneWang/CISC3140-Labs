@@ -12,7 +12,7 @@
             padding-bottom: 20px;
         }
 
-        textarea.danger{
+        textarea.danger {
             color: #a30e0e !important;
 
         }
@@ -53,7 +53,7 @@
 
         </div>
 
-        <input id="tg-dangerous-mode" type="checkbox" data-on="Dangerous Mode" data-off="Normal Mode"  
+        <input id="tg-dangerous-mode" type="checkbox" data-on="Dangerous Mode" data-off="Normal Mode"
             data-toggle="toggle" data-onstyle="danger" data-size="sm" data-width="200" data-height="10">
 
         <button type="button" class="btn btn-sm btn-outline-secondary float-right mr-1 mb-1" id="btn-copy"
@@ -75,13 +75,14 @@
 
     var targetCount = 0;
     var cookie_essay_assistant
+    var maxWordCount;
 
     var dangerousModeTimer;
-    const DANGEROUS_TIMER = 2000;
+    const DANGEROUS_TIMER = 10000;
 
 
     var dangerousModeTimerNotification1;
-    const DANGEROUS_TIMER_N1 = 1000;
+    const DANGEROUS_TIMER_N1 = 5000;
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -112,15 +113,19 @@
     function processTextInput() {
 
 
-        setDangerousMode();
-
 
         var words = txtEssayArea.value;
-        var wordCount = getWordCount(words);
+        var currentWordCount = getWordCount(words);
+
+
+
+        setDangerousMode(currentWordCount);
+
+
         cookie_essay_assistant["words"] = words;
         document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
-        processBadgeColor(wordCount);
-        spWordCount.textContent = wordCount;
+        processBadgeColor(currentWordCount);
+        spWordCount.textContent = currentWordCount;
     }
 
     inputWordCount.addEventListener('input', () => {
@@ -129,21 +134,32 @@
     })
 
 
-    function setDangerousMode() {
+    function setDangerousMode(currentWordCount) {
+
+
         clearTimeout(dangerousModeTimer);
         clearTimeout(dangerousModeTimerNotification1);
-        
+
         txtEssayArea.classList.remove("danger");
+
+
         if (isDangerousMode()) {
             dangerousModeTimer = setTimeout(() => {
 
-                console.log("time out!");
+                if (isDangerousMode) {
+
+                    console.log("time out!");
+                    copyHandler();
+                    txtEssayArea.value  = "";
+                }
             }, (DANGEROUS_TIMER));
 
             dangerousModeTimerNotification1 = setTimeout(() => {
-                
-                txtEssayArea.classList.add("danger");
-                console.log("Red Off");
+                if (isDangerousMode) {
+
+                    txtEssayArea.classList.add("danger");
+                    console.log("Red Off");
+                }
             }, (DANGEROUS_TIMER_N1));
         }
     }
