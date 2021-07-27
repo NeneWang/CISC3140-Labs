@@ -32,7 +32,7 @@
                     <div class="input-group input-group-sm mb-3">
 
                         <input class="input-group-text input-sm" id="input-word-count" type="number"
-                            placeholder="Target word count">
+                            placeholder="Target word count 🎯">
                     </div>
                 </div>
 
@@ -74,9 +74,19 @@
     const btnCopy = document.getElementById("btn-copy");
 
     var targetCount = 0;
+    var cookie_essay_assistant
 
-    console.log(document.cookie);
-    console.log(getCook("essay_assistant"));
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if ((getCook("essay_assistant"))) {
+            cookie_essay_assistant = JSON.parse(getCook("essay_assistant"));
+            let wordsSaved = cookie_essay_assistant["words"];
+            if (wordsSaved) {
+                txtEssayArea.textContent = wordsSaved;
+            }
+
+        }
+    })
     document.querySelectorAll('.wordcount-set').forEach(element => {
         element.addEventListener('click', () => {
             setWordCount(element.value);
@@ -90,32 +100,26 @@
     })
 
     function processTextInput() {
-        var wordCount = getWordCount(txtEssayArea.value)
-        document.cookie
-        document.cookie = 'essay_assistant={"result":true, "count":42}';
-
+        var words = txtEssayArea.value;
+        var wordCount = getWordCount(words);
+        cookie_essay_assistant["words"] = words;
+        document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
         processBadgeColor(wordCount);
         spWordCount.textContent = wordCount;
     }
 
-
     inputWordCount.addEventListener('input', () => {
         targetCount = inputWordCount.value;
         processTextInput();
-
-
     })
 
-
-    // Extracted from: https://stackoverflow.com/questions/5142337/read-a-javascript-cookie-by-name
+    // The following method was extracted from: https://stackoverflow.com/questions/5142337/read-a-javascript-cookie-by-name
     function getCook(cookiename) {
         var cookiestring = RegExp(cookiename + "=[^;]+").exec(document.cookie);
         return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./, "") : "");
     }
 
-
     function copyHandler() {
-
         copyEssayToClipboard();
         resetCopyBtn();
         btnCopy.textContent = "Copied";
@@ -145,7 +149,6 @@
 
     function processBadgeColor(wordCount) {
         removeAllBadgeClasses();
-
         if (wordCount == 0) {
             spWordCount.classList.add("badge-secondary");
         } else if (wordCount >= targetCount) {
