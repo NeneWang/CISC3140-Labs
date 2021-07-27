@@ -49,8 +49,9 @@
         </div>
 
         <input id="dangerous-mode" type="checkbox" data-on="Dangerous Mode" data-off="Normal Mode" data-toggle="toggle"
-        data-onstyle="danger" data-size="sm" data-width="200" data-height="10">
-        
+            data-onstyle="danger" data-size="sm" data-width="200" data-height="10">
+
+
         <button type="button" class="btn btn-sm btn-outline-secondary float-right mr-1 mb-1" id="btn-copy"
             onclick="copyHandler()">Copy</button>
         <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
@@ -79,17 +80,22 @@
     const btnCopy = document.getElementById("btn-copy");
 
     var targetCount = 0;
-    var cookie_essay_assistant
+    var cookie_essay_assistant = new Array();
 
 
     document.addEventListener("DOMContentLoaded", function () {
+
+
         if ((getCook("essay_assistant"))) {
             cookie_essay_assistant = JSON.parse(getCook("essay_assistant"));
+            console.log(cookie_essay_assistant);
             let wordsSaved = cookie_essay_assistant["words"];
             if (wordsSaved) {
                 txtEssayArea.textContent = wordsSaved;
             }
 
+        }else{
+            cookie_essay_assistant["words"] = "";
         }
     })
     document.querySelectorAll('.wordcount-set').forEach(element => {
@@ -107,7 +113,10 @@
     function processTextInput() {
         var words = txtEssayArea.value;
         var wordCount = getWordCount(words);
-        cookie_essay_assistant["words"] = words;
+        if (words!=undefined) {
+
+            cookie_essay_assistant["words"] = txtEssayArea.value;
+        }
         document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
         processBadgeColor(wordCount);
         spWordCount.textContent = wordCount;
