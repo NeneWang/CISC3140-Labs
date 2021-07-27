@@ -1,5 +1,6 @@
 ### Live Demo
-https://wngnelson.com/essay/
+
+<a href="https://wngnelson.com/essay/ " target="_blank">Essay Assistant - live demo</a>
 
 ### Credits, Sources and Dependencies
 Bootstrap 4.3 https://getbootstrap.com
