@@ -24,7 +24,8 @@
             <br>
             <div class="input-group input-group-sm mb-3">
 
-                <input class="input-group-text" id="input-word-count" type="number" placeholder="Target word count"> </div>
+                <input class="input-group-text" id="input-word-count" type="number" placeholder="Target word count">
+            </div>
         </div>
 
         <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
@@ -37,39 +38,55 @@
     const txtEssayArea = document.getElementById("txt-essay-area");
     const spWordCount = document.getElementById("sp-word-count");
     const inputWordCount = document.getElementById("input-word-count");
-    
+
+    var targetCount = 0;
+
 
     txtEssayArea.addEventListener('input', () => {
-        var textLn = getWordCount(txtEssayArea.value)
-        processBadgeColor();
-        // console.log(textLn);
-        spWordCount.textContent = textLn;
+        processTextInput();
     })
 
-    inputWordCount.addEventListener('input', () => {
-        calculateColorsTreshhold();
-        
-    })
-
-    function calculateColorsTreshhold(){
-
-
+    function processTextInput(){
+        var wordCount = getWordCount(txtEssayArea.value)
+        processBadgeColor(wordCount);
+        spWordCount.textContent = wordCount;
     }
 
+
+    inputWordCount.addEventListener('input', () => {
+        targetCount = inputWordCount.value;
+        processTextInput();
+
+
+    })
+
+
     function getWordCount(textIn) {
-        if(textIn.length<=0){
+        if (textIn.length <= 0) {
             return 0;
         }
         return textIn.trim().split(/\s+/).length;
     }
 
-    function processBadgeColor(){
+    function processBadgeColor(wordCount) {
         removeAllBadgeClasses();
-        spWordCount.classList.add("badge-primary")
+
+        if (wordCount == 0) {
+            spWordCount.classList.add("badge-secondary");
+        } else if (wordCount >= targetCount) {
+            spWordCount.classList.add("badge-success");
+        } else {
+
+            spWordCount.classList.add("badge-primary");
+        }
+
+
     }
 
     function removeAllBadgeClasses() {
         spWordCount.classList.remove("badge-secondary");
+        spWordCount.classList.remove("badge-success");
+        spWordCount.classList.remove("badge-primary");
     }
 </script>
 
