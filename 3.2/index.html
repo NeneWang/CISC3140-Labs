@@ -19,9 +19,15 @@
 
         <h1>Essay Assistant 📝</h1>
         <div class="form-group pt-2">
-            <label for="txt-essay-area"> Word count: <span class="badge badge-secondary" id="sp-word-count">00</span></label>
-            <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
+            <label for="txt-essay-area"> Word count: <span class="badge badge-secondary"
+                    id="sp-word-count">0</span></label>
+            <br>
+            <div class="input-group input-group-sm mb-3">
+
+                <input class="input-group-text" type="number" placeholder="Target word count"> </div>
         </div>
+
+        <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
 
     </div>
 </body>
@@ -34,8 +40,9 @@
     txtEssayArea.addEventListener('input', () => {
         var textLn = getWordCount(txtEssayArea.value)
         // console.log(textLn);
-        spWordCount.textContent =  textLn;
+        spWordCount.textContent = textLn;
     })
+
     function getWordCount(textIn) {
         return textIn.trim().split(/\s+/).length;
     }
