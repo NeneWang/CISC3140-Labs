@@ -39,12 +39,22 @@
 
     txtEssayArea.addEventListener('input', () => {
         var textLn = getWordCount(txtEssayArea.value)
+        processBadgeColor();
         // console.log(textLn);
         spWordCount.textContent = textLn;
     })
 
     function getWordCount(textIn) {
         return textIn.trim().split(/\s+/).length;
+    }
+
+    function processBadgeColor(){
+        removeAllBadgeClasses();
+        spWordCount.classList.add("badge-primary")
+    }
+
+    function removeAllBadgeClasses() {
+        spWordCount.classList.remove("badge-secondary");
     }
 </script>
 
