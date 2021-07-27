@@ -24,7 +24,7 @@
             <br>
             <div class="input-group input-group-sm mb-3">
 
-                <input class="input-group-text" type="number" placeholder="Target word count"> </div>
+                <input class="input-group-text" id="input-word-count" type="number" placeholder="Target word count"> </div>
         </div>
 
         <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
@@ -36,6 +36,8 @@
 <script>
     const txtEssayArea = document.getElementById("txt-essay-area");
     const spWordCount = document.getElementById("sp-word-count");
+    const inputWordCount = document.getElementById("input-word-count");
+    
 
     txtEssayArea.addEventListener('input', () => {
         var textLn = getWordCount(txtEssayArea.value)
@@ -43,6 +45,16 @@
         // console.log(textLn);
         spWordCount.textContent = textLn;
     })
+
+    inputWordCount.addEventListener('input', () => {
+        calculateColorsTreshhold();
+        
+    })
+
+    function calculateColorsTreshhold(){
+
+        
+    }
 
     function getWordCount(textIn) {
         return textIn.trim().split(/\s+/).length;
