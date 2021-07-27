@@ -34,27 +34,12 @@
     // );
 
     txtEssayArea.addEventListener('input', () => {
-        var textLn = (txtEssayArea.value).split(" ").length;
+        var textLn = getWordCount(txtEssayArea.value)
         console.log(textLn);
-        console.log("edited")
     })
-
-    // txtEssayArea.addEventListener("oninput", onTxtEssayChange)
-    // if (txtEssayArea.addEventListener) {
-    //     txtEssayArea.addEventListener('input', function () {
-    //         // event handling code for sane browsers
-    //     }, false);
-    // } else if (txtEssayArea.attachEvent) {
-    //     txtEssayArea.attachEvent('onpropertychange', function () {
-    //         // IE-specific event handling code
-    //     });
-    // }
-
-
-    // function onTxtEssayChange(event) {
-    //     console.log(txtEssayArea.value)
-    //     console.log("Sds");
-    // }
+    function getWordCount(textIn) {
+        return textIn.trim().split(/\s+/).length;
+    }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
