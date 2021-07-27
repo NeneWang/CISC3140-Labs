@@ -89,9 +89,20 @@
         if ((getCook("essay_assistant"))) {
             cookie_essay_assistant = JSON.parse(getCook("essay_assistant"));
             let wordsSaved = cookie_essay_assistant["words"];
+            let targetCountSaved = cookie_essay_assistant["targetCount"];
             if (wordsSaved) {
+
+
                 txtEssayArea.textContent = wordsSaved;
             }
+
+            if (targetCountSaved) {
+                targetCount = targetCountSaved;
+                setWordCount(targetCount);
+            }
+
+
+
 
 
 
@@ -123,6 +134,7 @@
 
 
         cookie_essay_assistant["words"] = words;
+        cookie_essay_assistant["targetCount"] = targetCount;
         document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
         processBadgeColor(currentWordCount);
         spWordCount.textContent = currentWordCount;
@@ -150,7 +162,7 @@
 
                     console.log("time out!");
                     copyHandler();
-                    txtEssayArea.value  = "";
+                    txtEssayArea.value = "";
                 }
             }, (DANGEROUS_TIMER));
 
