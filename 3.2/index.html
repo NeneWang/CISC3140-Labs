@@ -53,10 +53,13 @@
 
     function calculateColorsTreshhold(){
 
-        
+
     }
 
     function getWordCount(textIn) {
+        if(textIn.length<=0){
+            return 0;
+        }
         return textIn.trim().split(/\s+/).length;
     }
 
