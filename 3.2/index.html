@@ -29,13 +29,12 @@
 
 <script>
     const txtEssayArea = document.getElementById("txt-essay-area");
-    // txtEssayArea.onfocus(
-    //     console.log("Text area focused")
-    // );
+    const spWordCount = document.getElementById("sp-word-count");
 
     txtEssayArea.addEventListener('input', () => {
         var textLn = getWordCount(txtEssayArea.value)
-        console.log(textLn);
+        // console.log(textLn);
+        spWordCount.textContent =  textLn;
     })
     function getWordCount(textIn) {
         return textIn.trim().split(/\s+/).length;
