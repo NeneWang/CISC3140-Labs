@@ -12,7 +12,8 @@
             padding-bottom: 20px;
         }
     </style>
-
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -46,6 +47,10 @@
 
 
         </div>
+
+        <input id="dangerous-mode" type="checkbox"  data-on="Dangerous Mode" data-off="Normal Mode"   data-toggle="toggle" data-onstyle="danger" data-size="sm" data-width="200" data-height="10" > 
+
+
         <button type="button" class="btn btn-sm btn-outline-secondary float-right mr-1 mb-1" id="btn-copy"
             onclick="copyHandler()">Copy</button>
         <textarea class="form-control" id="txt-essay-area" rows="20"></textarea>
@@ -78,6 +83,9 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("#dangerous-mode").bootstrapToggle('off');
+
+
         if ((getCook("essay_assistant"))) {
             cookie_essay_assistant = JSON.parse(getCook("essay_assistant"));
             let wordsSaved = cookie_essay_assistant["words"];
@@ -180,5 +188,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
+
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
 </html>
