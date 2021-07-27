@@ -75,6 +75,8 @@
 
     var targetCount = 0;
 
+    console.log(document.cookie);
+    console.log(getCook("essay_assistant"));
     document.querySelectorAll('.wordcount-set').forEach(element => {
         element.addEventListener('click', () => {
             setWordCount(element.value);
@@ -89,6 +91,9 @@
 
     function processTextInput() {
         var wordCount = getWordCount(txtEssayArea.value)
+        document.cookie
+        document.cookie = 'essay_assistant={"result":true, "count":42}';
+
         processBadgeColor(wordCount);
         spWordCount.textContent = wordCount;
     }
@@ -100,6 +105,13 @@
 
 
     })
+
+
+    // Extracted from: https://stackoverflow.com/questions/5142337/read-a-javascript-cookie-by-name
+    function getCook(cookiename) {
+        var cookiestring = RegExp(cookiename + "=[^;]+").exec(document.cookie);
+        return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./, "") : "");
+    }
 
 
     function copyHandler() {
@@ -118,7 +130,7 @@
     }
 
     function setWordCount(newWordCount) {
-        inputWordCount.value = newWordCount;        
+        inputWordCount.value = newWordCount;
         wordCount = newWordCount;
         processTextInput();
     }
