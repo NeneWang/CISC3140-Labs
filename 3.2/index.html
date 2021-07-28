@@ -84,11 +84,10 @@
     var dangerousModeTimerNotification1;
     const DANGEROUS_TIMER_N1 = 5000;
 
-
     document.addEventListener("DOMContentLoaded", function () {
+
+        console.log(document.cookie);
         if ((getCook("essay_assistant"))) {
-
-
 
             cookie_essay_assistant = JSON.parse(getCook("essay_assistant"));
             let wordsSaved = cookie_essay_assistant["words"];
@@ -110,6 +109,12 @@
 
 
 
+        }else{
+            console.log("content not found")
+            cookie_essay_assistant = [];
+            
+            cookie_essay_assistant["words"] = "";
+            cookie_essay_assistant["targetCount"] = 1;
         }
     })
     document.querySelectorAll('.wordcount-set').forEach(element => {
@@ -135,13 +140,10 @@
 
         setDangerousMode(currentWordCount);
 
-        if (words && targetCount) {
 
-            cookie_essay_assistant["words"] = words;
-            cookie_essay_assistant["targetCount"] = targetCount;
-            document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
-        }
-
+        cookie_essay_assistant["words"] = words;
+        cookie_essay_assistant["targetCount"] = targetCount;
+        document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
         processBadgeColor(currentWordCount);
         spWordCount.textContent = currentWordCount;
     }
