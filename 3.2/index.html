@@ -87,6 +87,9 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         if ((getCook("essay_assistant"))) {
+
+
+
             cookie_essay_assistant = JSON.parse(getCook("essay_assistant"));
             let wordsSaved = cookie_essay_assistant["words"];
             let targetCountSaved = cookie_essay_assistant["targetCount"];
@@ -132,10 +135,13 @@
 
         setDangerousMode(currentWordCount);
 
+        if (words && targetCount) {
 
-        cookie_essay_assistant["words"] = words;
-        cookie_essay_assistant["targetCount"] = targetCount;
-        document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
+            cookie_essay_assistant["words"] = words;
+            cookie_essay_assistant["targetCount"] = targetCount;
+            document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
+        }
+
         processBadgeColor(currentWordCount);
         spWordCount.textContent = currentWordCount;
     }
@@ -176,7 +182,7 @@
         }
     }
 
-    function isWordCountAchieved(currentWordCount){
+    function isWordCountAchieved(currentWordCount) {
         return targetCount <= currentWordCount;
     }
 
