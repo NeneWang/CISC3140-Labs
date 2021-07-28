@@ -115,6 +115,7 @@
             
             cookie_essay_assistant["words"] = "";
             cookie_essay_assistant["targetCount"] = 1;
+            document.cookie = 'essay_assistant={"result":true,"count":42,"words":"","targetCount":"0"}';
         }
     })
     document.querySelectorAll('.wordcount-set').forEach(element => {
@@ -140,10 +141,11 @@
 
         setDangerousMode(currentWordCount);
 
-
+        console.log(words);
         cookie_essay_assistant["words"] = words;
         cookie_essay_assistant["targetCount"] = targetCount;
         document.cookie = 'essay_assistant=' + JSON.stringify(cookie_essay_assistant);
+        console.log(document.cookie);
         processBadgeColor(currentWordCount);
         spWordCount.textContent = currentWordCount;
     }
