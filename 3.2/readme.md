@@ -14,7 +14,7 @@ The Most Dangerous Writting App: https://www.squibler.io/dangerous-writing-promp
 ### Features:
 - Word counter: count your words.
 - Word target: write down your target amount of words.
-- Cookie backup: Accidentally closed your browser "Essay Assistant" tab? No worries! Your essay and settings are saved!
+- Cookie backup (only for firefox): Accidentally closed your browser "Essay Assistant" tab? No worries! Your essay and settings are saved!
 - Easy copy button: Easily copy your essay to your clipboard just by clicking "Copy"
 - Dangerous mode: In Dangerous Mode your essay will be deleted if you don't write anything for 10 seconds!
 
