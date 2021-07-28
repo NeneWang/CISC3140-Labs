@@ -56,7 +56,6 @@ nano hello_world.py
 >>print("Hello World")
 >>print(" I made some modifications")
 
-     svn diff
      svn commit -m "hello world | Modifications"
     
 >Sending        hello_world.py
