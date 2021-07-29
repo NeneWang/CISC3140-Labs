@@ -32,9 +32,14 @@ BEGIN{
 
 END {
 
-average_target_brooklyn = (summation_fullval_brooklyn/count_target_brooklyn)
-average_target_manhattan = (summation_fullval_manhattan/count_target_manhattan)
-average_target_bronx = (summation_fullval_bronx/count_target_bronx)
+average_target_brooklyn = (summation_fullval_brooklyn/count_target_brooklyn);
+average_target_manhattan = (summation_fullval_manhattan/count_target_manhattan);
+average_target_bronx = (summation_fullval_bronx/count_target_bronx);
+
+print("Borough, Total Market Value, Average Property Value");
+printf "Brooklyn %s, %s", summation_fullval_brooklyn, average_target_brooklyn;
+printf "Manhattan %s, %s", summation_fullval_manhattan, average_target_manhattan;
+printf "Bronx %s, %s", summation_fullval_bronx, average_target_bronx;
 
 
  }' realestate.csv
