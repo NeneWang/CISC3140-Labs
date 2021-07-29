@@ -1,6 +1,6 @@
-# Lab 2.2
+# Lab 3.1
 
-The Lab 2.2 program is named as realtor_bot.sh
+The Lab 3.1 program is named as realtor_bot.sh
 
 ##  How to run the program
 Instructions for macOS
