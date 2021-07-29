@@ -13,7 +13,7 @@ You need to install wget in order to run the program.
  4. navigate to lab 3.1:
 `cd CISC3140-Labs/3.1/`
  5. Run the makefile: `make` <br>
-*Refer to <b>[Output](###Output)</b> to understand what the program should compute*
+*Refer to <b>[Output](#Output)</b> to understand what the program should compute*
 
 
 ### Other Commands
