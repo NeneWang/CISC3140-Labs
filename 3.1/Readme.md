@@ -6,7 +6,7 @@ The Lab 3.1 downloads realestate data and analizes it.
 Instructions for macOS
  1. Open your terminal.
  2. Clone this repository:
- `clone https://github.com/NeneWang/CISC3140-Labs.git`
+ `git clone https://github.com/NeneWang/CISC3140-Labs.git`
  3. (if you dont have wget please install it)
  4. navigate to lab 3.1:
 ``
