@@ -1,6 +1,6 @@
 #! /bin/bash
 #! /bin/awk
-echo "Realtor Bot 2.0 Initiated!"
+echo "Running report generator"
 
 
 FILE_IN=realestate.csv
@@ -13,10 +13,7 @@ if test "$1"; then
 fi
 }
 
-# deleteIfExists $FILE_IN
 deleteIfExists $FILE_OUT
-
-# wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O $FILE_IN
 
 awk -F "," '
 func getValue(stringIn){
