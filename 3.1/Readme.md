@@ -21,7 +21,7 @@ The downloaded information comes from this API link: https://data.cityofnewyork.
 
 The downloaded information is renamed as realestate.csv and saved in the same folder of the makescript.
 
-The program calculates the total market value and average market values of the properties.
+The program calculates the total market value, average market values, most expensive streets and prices, cheapest streets and prices  of the properties.
 
 ### Output
 
