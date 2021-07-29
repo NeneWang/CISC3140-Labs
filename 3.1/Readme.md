@@ -14,6 +14,10 @@ You need to install wget in order to run the program.
 `cd CISC3140-Labs/3.1/`
  5. Run the makefile: `make`
 
+If you want to remove realestate.csv and report.csv you can run:
+`make clean`
+
+
 ## What the program does?
 The program downloads the Property Valuation and Assessment Data from NYC OpenData:  https://data.cityofnewyork.us/City-Government/Property-Valuation-and-Assessment-Data/yjxr-fw8i
 
