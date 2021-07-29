@@ -5,7 +5,7 @@ The Lab 3.1 downloads realestate data and analizes it.
 ##  How to run the program
 Instructions for macOS and Linux
 
-You will to install wget in order to run the program. 
+You need to install wget in order to run the program. 
 
  1. Open your terminal.
  2. Clone this repository:
