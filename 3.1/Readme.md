@@ -12,7 +12,9 @@ You need to install wget in order to run the program.
  `git clone https://github.com/NeneWang/CISC3140-Labs.git`
  4. navigate to lab 3.1:
 `cd CISC3140-Labs/3.1/`
- 5. Run the makefile: `make`
+ 5. Run the makefile: `make` <br>
+*Refer to <b>[Output](###Output)</b> to understand what the program should compute*
+
 
 ### Other Commands
 - If you want to remove realestate.csv and report.csv you can run:
