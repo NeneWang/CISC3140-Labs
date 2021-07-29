@@ -29,6 +29,6 @@ The program calculates the total market value, average market values, most expen
 
 ### Output
 
-creates a report.csv containing the Total Market Value and Average Property Value, Most expensive Streets and market values and cheapest streets and market values of the Real Estates in: Brooklyn, Manhatan and Bronx.
+creates a report.csv containing the Total Market Value and Average Property Value, Most expensive Streets and market values, cheapest streets and market values of the Real Estates in: Brooklyn, Manhatan and Bronx.
 
 [![report screenshot](https://github.com/NeneWang/CISC3140-Labs/blob/main/3.1/Assets/report%20screenshot.png?raw=true "report screenshot")](https://github.com/NeneWang/CISC3140-Labs/blob/main/3.1/Assets/report%20screenshot.png?raw=true "report screenshot")
