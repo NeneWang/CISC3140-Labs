@@ -18,7 +18,7 @@ If you want to remove realestate.csv and report.csv you can run:
 `make clean`
 
 
-## What the program does?
+## What does program do?
 The program downloads the Property Valuation and Assessment Data from NYC OpenData:  https://data.cityofnewyork.us/City-Government/Property-Valuation-and-Assessment-Data/yjxr-fw8i
 
 The downloaded information comes from this API link: https://data.cityofnewyork.us/resource/yjxr-fw8i.csv
