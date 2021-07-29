@@ -21,6 +21,8 @@ BEGIN{
 
 
  if(boro == boro_brooklyn) { summation_fullval_brooklyn += getValue($13); count_target_brooklyn++  };
+ if(boro == boro_manhattan) { summation_fullval_manhattan += getValue($13); count_target_manhattan++  };
+ if(boro == boro_bronx) { summation_fullval_bronx += getValue($13); count_target_bronx++  };
 
 
 
@@ -28,4 +30,11 @@ BEGIN{
 
 
 
-END { print(summation_fullval_brooklyn/count_target_brooklyn) }' realestate.csv
+END {
+
+average_target_brooklyn = (summation_fullval_brooklyn/count_target_brooklyn)
+average_target_manhattan = (summation_fullval_manhattan/count_target_manhattan)
+average_target_bronx = (summation_fullval_bronx/count_target_bronx)
+
+
+ }' realestate.csv
