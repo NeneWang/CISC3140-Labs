@@ -1,6 +1,22 @@
 #! /bin/bash
 #! /bin/awk
+echo "Realtor Bot 2.0 Initiated!"
 
+
+FILE_IN=realestate.csv
+FILE_OUT=report.csv
+
+deleteIfExists(){
+if test "$1"; then
+  echo "Cleaning $1"
+  rm $1
+fi
+}
+
+deleteIfExists $FILE_IN
+deleteIfExists $FILE_OUT
+
+wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O $FILE_IN
 
 awk -F "," '
 func getValue(stringIn){
@@ -42,4 +58,4 @@ printf "Manhattan, %s, %s\n", summation_fullval_manhattan, average_target_manhat
 printf "Bronx, %s, %s\n", summation_fullval_bronx, average_target_bronx;
 
 
-}' <realestate.csv> output.csv
+}' <$FILE_IN> $FILE_OUT
