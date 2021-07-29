@@ -16,7 +16,7 @@ You need to install wget in order to run the program.
 *Refer to <b>[Output](#Output)</b> to understand what the program should compute*
 
 
-### Other Commands
+Parameters
 - If you want to remove realestate.csv and report.csv you can run:
 `make clean`
 - If you only want to just download the realestate.csv file run: 
