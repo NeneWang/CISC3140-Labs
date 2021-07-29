@@ -19,8 +19,7 @@ The program downloads the Property Valuation and Assessment Data from NYC OpenDa
 
 The downloaded information comes from this API link: https://data.cityofnewyork.us/resource/yjxr-fw8i.csv
 
-The program deletes (if exists) realestate.csv and report.csv
-The downloaded information is renamed as realestate.csv and saved in the same folder of the realtor_bot.
+The downloaded information is renamed as realestate.csv and saved in the same folder of the makescript.
 
 The program calculates the total market value and average market values of the properties.
 
