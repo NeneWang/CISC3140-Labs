@@ -5,7 +5,7 @@
 |  | Git  | Subversion|
 |--|--|-- |
 | Documentation | https://git-scm.com/docs | https://svnbook.red-bean.com/ |
-| Quickistart | https://www.linuxjournal.com/content/git-quick-start-guide | https://subversion.apache.org/quick-start |
+| Quickstart | https://www.linuxjournal.com/content/git-quick-start-guide | https://subversion.apache.org/quick-start |
 | Creating New Repository | git init | svnadmin create \<repo name> |
 | Adding Files | git add \<filename.extension> | svn add \<filename.extension> |
 | Commiting Files | git commit -m "\<commit message>"  | svn commit -m "\<commit message>"|
