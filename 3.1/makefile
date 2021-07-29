@@ -8,4 +8,4 @@ download:
 
 runreport:
 	chmod +x reportgenerator.sh
-	./reportgenerator.sh
+	awk -f reporter.awk <realestate.csv> report.csv
