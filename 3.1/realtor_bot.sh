@@ -37,9 +37,9 @@ average_target_manhattan = (summation_fullval_manhattan/count_target_manhattan);
 average_target_bronx = (summation_fullval_bronx/count_target_bronx);
 
 print("Borough, Total Market Value, Average Property Value");
-printf "Brooklyn %s, %s", summation_fullval_brooklyn, average_target_brooklyn;
-printf "Manhattan %s, %s", summation_fullval_manhattan, average_target_manhattan;
-printf "Bronx %s, %s", summation_fullval_bronx, average_target_bronx;
+printf "Brooklyn, %s, %s\n", summation_fullval_brooklyn, average_target_brooklyn;
+printf "Manhattan, %s, %s\n", summation_fullval_manhattan, average_target_manhattan;
+printf "Bronx, %s, %s\n", summation_fullval_bronx, average_target_bronx;
 
 
- }' realestate.csv
+}' <realestate.csv> output.csv
