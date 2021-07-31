@@ -7,5 +7,4 @@ download:
 	wget https://data.cityofnewyork.us/resource/yjxr-fw8i.csv -O realestate.csv
 
 runreport:
-	chmod +x reportgenerator.sh
 	awk -f reporter.awk <realestate.csv> report.csv

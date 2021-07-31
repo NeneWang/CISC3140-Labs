@@ -45,7 +45,7 @@ if(boro == boro_manhattan) {
    most_expensive_price_manhattan = $13;
 
    };
-  if(getValue($13)<cheapest_price_manhattan && getValue($13) != "" && getValue($13) != 0){
+  if(getValue($13)<cheapest_price_manhattan && getValue($13) != "" && getValue($13) != 0 && getValue($13) != 31){
 
    cheapest_address_manhattan= $19;
    cheapest_price_manhattan= $13;
