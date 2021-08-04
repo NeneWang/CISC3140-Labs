@@ -18,3 +18,5 @@ UPDATE student SET surname="Sanchez" WHERE name="Rick";
 UPDATE student SET surname="May" WHERE name="Marith";
 UPDATE student SET surname="Lee" WHERE name="Kim";
 
+.separator ","
+.import students_data.csv student
