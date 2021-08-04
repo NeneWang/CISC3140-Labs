@@ -1,4 +1,10 @@
+-- CREATING AND DROPPING DATABASE
+-- CREATE DATABASE student
+-- DROP DATABASE student
+
+-- CREATING AND REMOVING DATABASE IN OUR LINUX MACHINE
 -- sqlite3 lab41.db
+-- rm lab41.db
 
 CREATE TABLE student( name CHAR(255), grade INT(10));
 
@@ -18,5 +24,17 @@ UPDATE student SET surname="Sanchez" WHERE name="Rick";
 UPDATE student SET surname="May" WHERE name="Marith";
 UPDATE student SET surname="Lee" WHERE name="Kim";
 
+-- Importing data from CSV Refer to students_data.csv available in the repo
 .separator ","
 .import students_data.csv student
+
+
+-- 
+CREATE TABLE homework (title CHAR(255), credits FLOAT);
+.schema homework
+-- Shows our homework SCHEMA
+DROP TABLE homework;
+.schema homework
+-- We can see that the schema is no longer available (since the table had been deleted)
+
+
