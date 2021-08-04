@@ -31,10 +31,10 @@ UPDATE student SET surname="Lee" WHERE name="Kim";
 
 -- 
 CREATE TABLE homework (title CHAR(255), credits FLOAT);
-.schema homework
--- Shows our homework SCHEMA
+.tables
+-- Shows our homework table
 DROP TABLE homework;
-.schema homework
--- We can see that the schema is no longer available (since the table had been deleted)
+.tables
+-- No more homeworks yeey...
 
 
