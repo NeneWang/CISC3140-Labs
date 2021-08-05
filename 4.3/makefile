@@ -1,4 +1,4 @@
-main:	download login create deploy
+main:	download login create
 clean:
 	rm -r lab4.2
 	rm -r lab4.3
