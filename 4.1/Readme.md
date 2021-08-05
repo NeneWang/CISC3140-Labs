@@ -1,5 +1,7 @@
 # Introduction
-Session Logs used for practice can be found in sessionlog.sql
+- Session Logs used for practice can be found in sessionlog.sql
+- Script to regenerate the database can be found in script.sql
+
 
 # Schema
 ## Student
