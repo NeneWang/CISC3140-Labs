@@ -18,6 +18,7 @@ create:
 	cd lab4.3
 	heroku create questboardfrontend
 	git push heroku main 
+	heroku open
 	cd ..
 
 
