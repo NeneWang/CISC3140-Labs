@@ -7,3 +7,6 @@ CREATE TABLE student( name CHAR(255), grade INT(10), surname CHAR(255));
 
 .separator ","
 .import students_data.csv student
+
+-- Show available tables schemas
+.schema
