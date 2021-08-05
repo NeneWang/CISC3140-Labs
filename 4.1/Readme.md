@@ -1,6 +1,7 @@
 # Introduction
 - Session Logs used for practice can be found in sessionlog.sql
 - Script to regenerate the database can be found in script.sql
+  - The script generates some sample students from the students_data.csv
 
 
 # Schema

@@ -4,3 +4,6 @@
 -- rm lab41.db
 
 CREATE TABLE student( name CHAR(255), grade INT(10));
+
+.separator ","
+.import students_data.csv student
