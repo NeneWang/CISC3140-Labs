@@ -12,6 +12,7 @@ login:
 
 create:
 	cd lab4.2
+	npm install
 	git init
 	git add .
 	git commit -m "backend commit"
