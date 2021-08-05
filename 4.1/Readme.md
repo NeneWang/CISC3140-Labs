@@ -1,4 +1,7 @@
-## Schema
+# Introduction
+Session Logs used for practice can be found in sessionlog.sql
+
+# Schema
 ## Student
 This is my basic schema for my student table in the session (script.sql)
 
