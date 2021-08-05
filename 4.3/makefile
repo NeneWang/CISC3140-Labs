@@ -12,13 +12,20 @@ login:
 
 create:
 	cd lab4.2
+	git init
+	git add .
+	git commit -m "backend commit"
 	heroku create questboardbackend
-	git push heroku master
+	heroku git:remote -a questboardbackend
+	git push heroku HEAD:master
 	cd ..
 	cd lab4.3
+	git init
+	git add .
+	git commit -m "frontend commit"
 	heroku create questboardfrontend
-	git push heroku main 
-	heroku open
+	heroku git:remote -a questboardfrontend
+	git push heroku HEAD:master
 	cd ..
 
 
@@ -28,6 +35,6 @@ deploy:
 	heroku open
 	cd ..
 	cd lab4.3
-	git push heroku main 
+	git push heroku main
 	heroku open
 	cd ..
