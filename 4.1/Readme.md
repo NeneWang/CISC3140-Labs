@@ -10,3 +10,4 @@ This is my basic schema for my student table in the session (script.sql)
 | name  | grade  |   surname |
 | ------------ | ------------ | ------------ |
 |  CHAR(255) | INT(10)  | CHAR(255)   |   
+| The name of the student | Grade of the student | Surname of student|
