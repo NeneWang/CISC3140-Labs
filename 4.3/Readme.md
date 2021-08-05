@@ -30,7 +30,7 @@ You need to install wget in order to run the program.
 `make login`
 - If you want to deploy to Heroku for the first time (having Lab4.2 and 4.3 already installed)
 `make create`
-- If you want to manually deploy into heroku
+- If you want to manually deploy into heroku (to an existent heroku app)
 `make deploy`
 
 
